@@ -2,6 +2,7 @@
 #include <optional>
 #include <iostream>
 #include "classes/Grid.h"
+#include "classes/MouseTile.h"
 
 int main ()
 {
@@ -10,12 +11,14 @@ int main ()
   sf::RenderWindow window(sf::VideoMode({1920, 1080}), "Map Editor");
   window.setFramerateLimit(240);
   //----Initialize
+  MouseTile mouseTile;
+  mouseTile.Initialize();
 
   Grid grid;
   grid.Initialize();
 
-  
   //----Load
+  mouseTile.Load();
   grid.Load();
 
   //----Load
@@ -35,14 +38,17 @@ int main ()
                 window.close();
             }  
         }  
-  
+  sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(window));
+
   grid.Update(deltaTime);
+  mouseTile.Update(deltaTime, mousePosition);
 
   //----Update
   //----Draw
 
     window.clear(sf::Color::Black);
     grid.Draw(window);
+    mouseTile.Draw(window);
     window.display();
  }
  return 0;

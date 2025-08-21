@@ -2,6 +2,10 @@
 
 A side project to help with making and rendering maps into my C++ game, DDC.
 
+<h2> 20th August </h2>
+
+The tutorial(#23), is taking a lot of time refactoring the code. I understand that this is helpful and as I get better at coding, rewatching this will be helpful but right now, I am eager to continue with my game. So I am happy to hard code my variables but know that if I make something in the future, I can come back and re-use this code.
+
 <h2> 19th August </h2>
 
 Set up my repo and main.cpp.
@@ -28,3 +32,5 @@ Step 1: Create a grid class.
 The math is that we use a for loop for each axis to render out lines, but include a `+ 1` to close it off.
 
 <img src="src/img/grid.png" width="200px">
+
+To fill in that missing pixel in the corner, the thickness of the line (in this case 2) is added to the horizontal length using `+2`
