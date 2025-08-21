@@ -2,6 +2,32 @@
 
 A side project to help with making and rendering maps into my C++ game, DDC.
 
+<h2> 21st August </h2>
+
+Snap Grid:
+
+The next step is to get the tile to automatically, align to the cell no matter where the mouse position is within that cell. Basically the math works like this:
+
+`mousePositionAxisX/pixelsPerCell = converted to an integer, mousePositionAxisY/pixelsPerCell = converted to an integer`
+
+In converting to an integer everything after the decimal point disappears, its not rounding up or down, just dropping that data. So it will revert to 0,0 or 1,0 and we can then use that to place the tile to the corner filling the whole cell by
+
+`multiplying by pixelsPerCell`
+
+```cpp
+
+  int x = mousePosition.x / 32;
+  int xx = x * 32;
+
+  int y = mousePosition.y / 32;
+  int yy = y * 32;
+
+  sf::Vector2i position(xx, yy);
+
+  tile.setPosition(static_cast<sf::Vector2f>(position));
+
+```
+
 <h2> 20th August </h2>
 
 The tutorial(#23), is taking a lot of time refactoring the code. I understand that this is helpful and as I get better at coding, rewatching this will be helpful but right now, I am eager to continue with my game. So I am happy to hard code my variables but know that if I make something in the future, I can come back and re-use this code.

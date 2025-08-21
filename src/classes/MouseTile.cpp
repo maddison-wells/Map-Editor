@@ -30,7 +30,7 @@ void MouseTile::Load()
 
 
 sf::IntRect rect(
-            sf::Vector2i(64, 128), //which position
+            sf::Vector2i(128, 128), //which position
             sf::Vector2i(32, 32) //size
         );
 
@@ -43,8 +43,17 @@ sf::IntRect rect(
 void MouseTile::Update(float deltaTime,sf::Vector2f mousePosition)
 
 {
-  tile.setPosition(mousePosition);
+  int x = mousePosition.x / 32;
+  int xx = x * 32;
+
+  int y = mousePosition.y / 32;
+  int yy = y * 32;
+
+  sf::Vector2i position(xx, yy);
+
+  tile.setPosition(static_cast<sf::Vector2f>(position));
 }
+
 void MouseTile::Draw(sf::RenderWindow& window)
 
 {
