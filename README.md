@@ -2,9 +2,15 @@
 
 A side project to help with making and rendering maps into my C++ game, DDC.
 
+<h2> 23nd August </h2>
+
+I feel like I am going to put a pin in the map editor. I understand that its helpful and a good idea and maybe I will come back to it, but for now I want to continue with the game. The tutorials lessons are nearly at an end of the series so far and the last 3-4 videos have been about the editor and the dude kind of goes on these massive tangents and im just not interested.
+
 <h2> 22nd August </h2>
 
 Still working through creating the map editor, created a function to get the tile position on click. The next step is to create a way for the map.cpp to register when a click happens in mousetile.cpp, to record the numbers. It needs to 'subscribe' to changes. In C# its called a `delegate` but C++ doesn't have a name for it.
+
+Going to use a pointer
 
 <h2> 21st August </h2>
 
