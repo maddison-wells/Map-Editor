@@ -3,6 +3,7 @@
 #include <iostream>
 #include "classes/Grid.h"
 #include "classes/MouseTile.h"
+#include "classes/Map.h"
 
 int main ()
 {
@@ -14,11 +15,15 @@ int main ()
   MouseTile mouseTile;
   mouseTile.Initialize();
 
+  // Map map;
+  // map.Initialize();
+
   Grid grid;
   grid.Initialize();
 
   //----Load
   mouseTile.Load();
+  // map.Load();
   grid.Load();
 
   //----Load
@@ -41,6 +46,7 @@ int main ()
   sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(window));
 
   grid.Update(deltaTime);
+  // map.Update(deltaTime);
   mouseTile.Update(deltaTime, mousePosition);
 
   //----Update
@@ -48,6 +54,7 @@ int main ()
 
     window.clear(sf::Color::Black);
     grid.Draw(window);
+    // map.Draw(window);
     mouseTile.Draw(window);
     window.display();
  }

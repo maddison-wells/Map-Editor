@@ -19,4 +19,6 @@ class MouseTile
     void Update(float deltaTime, sf::Vector2f mousePosition);
     void Draw(sf::RenderWindow& window);
 
+    void* (MouseTile::*OnGridClick(int));
+
 };

@@ -43,15 +43,23 @@ sf::IntRect rect(
 void MouseTile::Update(float deltaTime,sf::Vector2f mousePosition)
 
 {
-  int x = mousePosition.x / 32;
+  int x = (mousePosition.x) / 32;
   int xx = x * 32;
 
-  int y = mousePosition.y / 32;
+  int y = (mousePosition.y) / 32;
   int yy = y * 32;
 
   sf::Vector2i position(xx, yy);
 
   tile.setPosition(static_cast<sf::Vector2f>(position));
+
+  if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+  {
+    int index = x + y * 10; 
+    std::cout << x << " " << y << std::endl;
+    std::cout << index << std::endl;
+    OnGridClick(index);
+  }
 }
 
 void MouseTile::Draw(sf::RenderWindow& window)

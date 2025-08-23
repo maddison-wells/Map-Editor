@@ -2,6 +2,10 @@
 
 A side project to help with making and rendering maps into my C++ game, DDC.
 
+<h2> 22nd August </h2>
+
+Still working through creating the map editor, created a function to get the tile position on click. The next step is to create a way for the map.cpp to register when a click happens in mousetile.cpp, to record the numbers. It needs to 'subscribe' to changes. In C# its called a `delegate` but C++ doesn't have a name for it.
+
 <h2> 21st August </h2>
 
 Snap Grid:
